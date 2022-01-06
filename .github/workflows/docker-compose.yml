@@ -1,0 +1,19 @@
+version: "3.1"
+services:
+  nuls:
+    image: nulsio/nuls-wallet-pro:v2.10.0
+    restart: always
+    container_name: NSWAP
+    ports:
+   # Port Mapping
+      - "65.108.46.135:8001:8001"
+      - "65.108.46.135:8002:8002"
+      - "65.108.46.135:8003:8003"  
+      - "65.108.46.135:8004:8004"
+    volumes:
+   # Database directory mapping
+      - ./data:/nuls/data
+      - ./logs:/nuls/Logs
+      - ./mongo_data:/nuls/mongo_data
+      - ./mongo_log:/nuls/mongo_log
+
